@@ -1,0 +1,1 @@
+export const SUBMIT_NEW_BOARD = "SUBMIT_NEW_BOARD";
