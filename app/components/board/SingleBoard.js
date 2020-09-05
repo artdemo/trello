@@ -1,16 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import CreateListLink from "../list/CreateListLink";
+import Form from "../Form";
+import Button from "../Button";
+import AllLists from "../list/AllLists";
 import ErrorPage from "../ErrorPage";
 import { connect } from "react-redux";
+import { submitNewList } from "Actions/actions";
 
 const SingleBoard = (props) => {
-	const { board, match } = props;
+	const { board, match, submitNewList } = props;
 
 	const [createMode, setCreateMode] = useState(false);
 
 	if (!board) return <ErrorPage />;
 
+	const goToLists = () => {
+		setCreateMode(false);
+	};
 	const goToForm = () => {
 		setCreateMode(true);
 	};
@@ -20,8 +27,18 @@ const SingleBoard = (props) => {
 			<div>
 				<h3>{board.title}</h3>
 			</div>
+			<AllLists boardId={board.id} />
 			{createMode ? (
-				<div>Creating mode</div>
+				<Form
+					submitAction={(title) => submitNewList(board.id, title)}
+					resetAction={goToLists}
+					errorMsg="You have to name your new list"
+					placeholder={"Name your list"}
+				>
+					<Button type="reset" classProps="">
+						Cancel
+					</Button>
+				</Form>
 			) : (
 				<CreateListLink handleClick={goToForm} />
 			)}
@@ -35,4 +52,4 @@ function mapStateToProps(state, props) {
 	};
 }
 
-export default connect(mapStateToProps)(SingleBoard);
+export default connect(mapStateToProps, { submitNewList })(SingleBoard);

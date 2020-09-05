@@ -1,1 +1,2 @@
 export const SUBMIT_NEW_BOARD = "SUBMIT_NEW_BOARD";
+export const SUBMIT_NEW_LIST = "SUBMIT_NEW_LIST";
