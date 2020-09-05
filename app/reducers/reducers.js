@@ -1,4 +1,8 @@
-import { SUBMIT_NEW_BOARD, SUBMIT_NEW_LIST } from "Actions/types";
+import {
+	SUBMIT_NEW_BOARD,
+	SUBMIT_NEW_LIST,
+	SUBMIT_NEW_CARD,
+} from "Actions/types";
 import { combineReducers } from "redux";
 import { reducer as formReducer } from "redux-form";
 
@@ -20,7 +24,17 @@ const handleListReducer = (state = [], action) => {
 	}
 };
 
+const handleCardReducer = (state = [], action) => {
+	switch (action.type) {
+		case SUBMIT_NEW_CARD:
+			return [...state, action.payload];
+		default:
+			return state;
+	}
+};
+
 export const rootReducer = combineReducers({
 	boards: handleBoardReducer,
 	lists: handleListReducer,
+	cards: handleCardReducer,
 });

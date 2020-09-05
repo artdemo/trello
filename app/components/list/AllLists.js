@@ -9,7 +9,14 @@ const allLists = ({ boardId, lists }) => {
 		if (!thisLists.length) return;
 
 		const insertLists = thisLists.map((list) => {
-			return <SingleList key={list.id} title={list.title} />;
+			return (
+				<SingleList
+					key={list.id}
+					boardId={boardId}
+					listId={list.id}
+					title={list.title}
+				/>
+			);
 		});
 
 		return <>{insertLists}</>;
