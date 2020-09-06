@@ -5,8 +5,15 @@ import Button from "../Button";
 import { Link } from "react-router-dom";
 import { submitNewBoard } from "Actions/actions";
 import { connect } from "react-redux";
+import { getStateFromStorage } from "Root/server";
+import { setFromStorage } from "Actions/actions";
 
-const AllBoards = ({ boards, submitNewBoard }) => {
+const AllBoards = ({ boards, submitNewBoard, setFromStorage }) => {
+	useEffect(() => {
+		const state = getStateFromStorage();
+		setFromStorage(state);
+	}, []);
+
 	const [createMode, setCreateMode] = useState(false);
 
 	const goToBoards = () => {
@@ -69,4 +76,5 @@ function mapStateToProps(state) {
 
 export default connect(mapStateToProps, {
 	submitNewBoard,
+	setFromStorage,
 })(AllBoards);

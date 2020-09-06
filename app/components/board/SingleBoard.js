@@ -6,9 +6,15 @@ import Button from "../Button";
 import AllLists from "../list/AllLists";
 import ErrorPage from "../ErrorPage";
 import { connect } from "react-redux";
-import { submitNewList } from "Actions/actions";
+import { getStateFromStorage } from "Root/server";
+import { submitNewList, setFromStorage } from "Actions/actions";
 
 const SingleBoard = (props) => {
+	useEffect(() => {
+		const state = getStateFromStorage();
+		props.setFromStorage(state);
+	}, []);
+
 	const { board, match, submitNewList } = props;
 
 	const [createMode, setCreateMode] = useState(false);
@@ -52,4 +58,6 @@ function mapStateToProps(state, props) {
 	};
 }
 
-export default connect(mapStateToProps, { submitNewList })(SingleBoard);
+export default connect(mapStateToProps, { submitNewList, setFromStorage })(
+	SingleBoard
+);

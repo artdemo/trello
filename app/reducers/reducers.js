@@ -4,12 +4,15 @@ import {
 	SUBMIT_NEW_CARD,
 	REPLACE_CARD,
 	SET_ARCHIVE,
+	SET_FROM_STORAGE,
 } from "Actions/types";
 import { combineReducers } from "redux";
 import { reducer as formReducer } from "redux-form";
 
 const handleBoardReducer = (state = [], action) => {
 	switch (action.type) {
+		case SET_FROM_STORAGE:
+			return action.payload.boards;
 		case SUBMIT_NEW_BOARD:
 			return [...state, action.payload];
 		default:
@@ -19,6 +22,8 @@ const handleBoardReducer = (state = [], action) => {
 
 const handleListReducer = (state = [], action) => {
 	switch (action.type) {
+		case SET_FROM_STORAGE:
+			return action.payload.lists;
 		case SUBMIT_NEW_LIST:
 			return [...state, action.payload];
 		default:
@@ -28,6 +33,8 @@ const handleListReducer = (state = [], action) => {
 
 const handleCardReducer = (state = [], action) => {
 	switch (action.type) {
+		case SET_FROM_STORAGE:
+			return action.payload.cards;
 		case SUBMIT_NEW_CARD:
 			return [...state, action.payload];
 		case REPLACE_CARD:

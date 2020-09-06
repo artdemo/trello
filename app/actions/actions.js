@@ -4,6 +4,7 @@ import {
 	SUBMIT_NEW_CARD,
 	REPLACE_CARD,
 	SET_ARCHIVE,
+	SET_FROM_STORAGE,
 } from "./types";
 import { getNextId } from "Utils/helpers";
 
@@ -83,5 +84,12 @@ export const setArchive = (cardId) => {
 			type: SET_ARCHIVE,
 			payload: index,
 		});
+	};
+};
+
+export const setFromStorage = (state) => {
+	return {
+		type: SET_FROM_STORAGE,
+		payload: state,
 	};
 };

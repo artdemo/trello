@@ -11,6 +11,7 @@ module.exports = (env, options) => {
 		},
 		resolve: {
 			alias: {
+				Root: path.resolve(__dirname, "./app"),
 				Components: path.resolve(__dirname, "./app/components"),
 				Actions: path.resolve(__dirname, "./app/actions"),
 				Reducers: path.resolve(__dirname, "./app/reducers"),
