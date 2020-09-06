@@ -2,6 +2,7 @@ import {
 	SUBMIT_NEW_BOARD,
 	SUBMIT_NEW_LIST,
 	SUBMIT_NEW_CARD,
+	REPLACE_CARD,
 } from "Actions/types";
 import { combineReducers } from "redux";
 import { reducer as formReducer } from "redux-form";
@@ -28,6 +29,19 @@ const handleCardReducer = (state = [], action) => {
 	switch (action.type) {
 		case SUBMIT_NEW_CARD:
 			return [...state, action.payload];
+		case REPLACE_CARD:
+			const { listId, nextId, currentIndex } = action.payload;
+
+			const clonedState = [...state];
+
+			const cardToReplace = clonedState.splice(currentIndex, 1)[0];
+
+			cardToReplace.listId = listId;
+			cardToReplace.id = nextId;
+
+			clonedState.push(cardToReplace);
+
+			return clonedState;
 		default:
 			return state;
 	}

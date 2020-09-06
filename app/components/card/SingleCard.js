@@ -1,9 +1,18 @@
 import React from "react";
-import { setArchive } from "Actions/actions";
 import { connect } from "react-redux";
 
-const SingleCard = ({ title }) => {
-	return <li>{title}</li>;
+const SingleCard = ({ title, cardId, sourceListId }) => {
+	const handleDragStart = (e) => {
+		const data = JSON.stringify({ cardId, sourceListId });
+
+		e.dataTransfer.setData("text/plain", data);
+	};
+
+	return (
+		<li draggable={true} onDragStart={handleDragStart}>
+			{title}
+		</li>
+	);
 };
 
 export default SingleCard;

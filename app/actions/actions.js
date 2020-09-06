@@ -1,4 +1,9 @@
-import { SUBMIT_NEW_BOARD, SUBMIT_NEW_LIST, SUBMIT_NEW_CARD } from "./types";
+import {
+	SUBMIT_NEW_BOARD,
+	SUBMIT_NEW_LIST,
+	SUBMIT_NEW_CARD,
+	REPLACE_CARD,
+} from "./types";
 import { getNextId } from "Utils/helpers";
 
 export const submitNewBoard = (title) => {
@@ -43,6 +48,24 @@ export const submitNewCard = (boardId, listId, title) => {
 				title,
 				listId,
 				boardId,
+			},
+		});
+	};
+};
+
+export const replaceCard = (cardId, listId) => {
+	return (dispatch, getState) => {
+		const { cards } = getState(),
+			nextId = getNextId(cards);
+
+		const currentIndex = cards.findIndex((card) => card.id == cardId);
+
+		dispatch({
+			type: REPLACE_CARD,
+			payload: {
+				listId,
+				nextId,
+				currentIndex,
 			},
 		});
 	};

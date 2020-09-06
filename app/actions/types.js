@@ -1,3 +1,4 @@
 export const SUBMIT_NEW_BOARD = "SUBMIT_NEW_BOARD";
 export const SUBMIT_NEW_LIST = "SUBMIT_NEW_LIST";
 export const SUBMIT_NEW_CARD = "SUBMIT_NEW_CARD";
+export const REPLACE_CARD = "REPLACE_CARD";

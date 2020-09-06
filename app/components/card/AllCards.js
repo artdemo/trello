@@ -11,7 +11,14 @@ const AllCards = ({ boardId, listId, cards, classProps }) => {
 		if (!thisCards.length) return;
 
 		const insertCards = thisCards.map((card) => {
-			return <SingleCard key={card.id} cardId={card.id} title={card.title} />;
+			return (
+				<SingleCard
+					key={card.id}
+					cardId={card.id}
+					title={card.title}
+					sourceListId={listId}
+				/>
+			);
 		});
 
 		return <ul className={`${classProps}`}>{insertCards}</ul>;
