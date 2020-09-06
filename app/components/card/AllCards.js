@@ -17,6 +17,7 @@ const AllCards = ({ boardId, listId, cards, classProps }) => {
 					cardId={card.id}
 					title={card.title}
 					sourceListId={listId}
+					isArchived={card.isArchived}
 				/>
 			);
 		});

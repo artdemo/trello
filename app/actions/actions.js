@@ -3,6 +3,7 @@ import {
 	SUBMIT_NEW_LIST,
 	SUBMIT_NEW_CARD,
 	REPLACE_CARD,
+	SET_ARCHIVE,
 } from "./types";
 import { getNextId } from "Utils/helpers";
 
@@ -48,6 +49,7 @@ export const submitNewCard = (boardId, listId, title) => {
 				title,
 				listId,
 				boardId,
+				isArchived: false,
 			},
 		});
 	};
@@ -67,6 +69,19 @@ export const replaceCard = (cardId, listId) => {
 				nextId,
 				currentIndex,
 			},
+		});
+	};
+};
+
+export const setArchive = (cardId) => {
+	return (dispatch, getState) => {
+		const { cards } = getState();
+
+		const index = cards.findIndex((card) => card.id == cardId);
+
+		dispatch({
+			type: SET_ARCHIVE,
+			payload: index,
 		});
 	};
 };

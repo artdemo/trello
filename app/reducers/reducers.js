@@ -3,6 +3,7 @@ import {
 	SUBMIT_NEW_LIST,
 	SUBMIT_NEW_CARD,
 	REPLACE_CARD,
+	SET_ARCHIVE,
 } from "Actions/types";
 import { combineReducers } from "redux";
 import { reducer as formReducer } from "redux-form";
@@ -42,6 +43,16 @@ const handleCardReducer = (state = [], action) => {
 			clonedState.push(cardToReplace);
 
 			return clonedState;
+		case SET_ARCHIVE:
+			const index = action.payload,
+				cardToSet = state[index],
+				currentStatus = cardToSet.isArchived;
+
+			const newState = [...state];
+
+			newState.splice(index, 1, { ...cardToSet, isArchived: !currentStatus });
+
+			return newState;
 		default:
 			return state;
 	}

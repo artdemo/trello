@@ -13,10 +13,10 @@ const preloadedState = {
 		{ id: 1, title: "Second list", boardId: 0 },
 	],
 	cards: [
-		{ id: 0, title: "First card", boardId: 0, listId: 0 },
-		{ id: 1, title: "Second card", boardId: 0, listId: 0 },
-		{ id: 2, title: "Third card", boardId: 0, listId: 1 },
-		{ id: 3, title: "Fourth card", boardId: 0, listId: 1 },
+		{ id: 0, title: "First card", boardId: 0, listId: 0, isArchived: false },
+		{ id: 1, title: "Second card", boardId: 0, listId: 0, isArchived: false },
+		{ id: 2, title: "Third card", boardId: 0, listId: 1, isArchived: false },
+		{ id: 3, title: "Fourth card", boardId: 0, listId: 1, isArchived: false },
 	],
 };
 //
