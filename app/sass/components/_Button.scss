@@ -33,4 +33,14 @@
 		color: $alpine;
 		text-shadow: 1px 1px 3px $queen;
 	}
+
+	@at-root &_round {
+		border-radius: 50%;
+		width: 25px;
+		height: 25px;
+		background-color: $alpine;
+		color: $apple;
+		border: 2px solid $apple;
+		display: inline-block;
+	}
 }

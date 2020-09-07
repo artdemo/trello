@@ -5,6 +5,7 @@ import Form from "../Form";
 import Button from "../Button";
 import AllLists from "../list/AllLists";
 import ErrorPage from "../ErrorPage";
+import Icon from "../Icon";
 import { connect } from "react-redux";
 import { getStateFromStorage } from "Root/server";
 import { submitNewList, setFromStorage } from "Actions/actions";
@@ -52,8 +53,8 @@ const SingleBoard = ({
 					errorMsg="You have to name your new list"
 					placeholder={"Name your list"}
 				>
-					<Button type="reset" classProps="">
-						Cancel
+					<Button type="reset" classProps="button_round form__button_round">
+						<Icon classProps="icon_cancel icon_s" />
 					</Button>
 				</Form>
 			) : (

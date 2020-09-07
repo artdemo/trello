@@ -57,6 +57,18 @@ module.exports = (env, options) => {
 						},
 					],
 				},
+				{
+					test: /\.woff2?/,
+					use: [
+						{
+							loader: "file-loader",
+							options: {
+								name: "[name].[ext]",
+								outputPath: "fonts",
+							},
+						},
+					],
+				},
 			],
 		},
 		devtool: options.mode === "development" ? "eval-source-map" : "",
