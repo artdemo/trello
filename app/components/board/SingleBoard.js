@@ -39,6 +39,7 @@ const SingleBoard = ({
 	return (
 		<div>
 			<div>
+				<Link to="/">Home</Link>
 				<h3>{board.title}</h3>
 			</div>
 			<AllLists boardId={board.id} />
