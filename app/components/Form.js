@@ -93,10 +93,11 @@ const Form = (props) => {
 		<form
 			onSubmit={handleSubmit}
 			onReset={handleReset}
-			className={`${props.classProps}`}
+			className={`form ${props.classProps}`}
 		>
 			<input
 				ref={inputRef}
+				className="form__control"
 				type="text"
 				onChange={handleChange}
 				value={value}

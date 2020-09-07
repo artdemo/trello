@@ -1,7 +1,9 @@
 import React from "react";
 
 const BoardLink = (props) => {
-	return <div className={`${props.classProps}`}>{props.children}</div>;
+	return (
+		<div className={`board-link ${props.classProps}`}>{props.children}</div>
+	);
 };
 
 BoardLink.defaultProps = {

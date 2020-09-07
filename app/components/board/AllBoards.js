@@ -35,9 +35,9 @@ const AllBoards = ({ boards, submitNewBoard, setFromStorage, isFetched }) => {
 
 		return boards.map((board) => {
 			return (
-				<Link key={board.id} to={`/${board.id}`}>
-					<BoardLink>
-						<h4>{board.title}</h4>
+				<Link key={board.id} to={`/${board.id}`} className="all-boards__link">
+					<BoardLink classProps="board-link_simple board-link_clickable">
+						<h4 className="board-link__title">{board.title}</h4>
 					</BoardLink>
 				</Link>
 			);
@@ -45,25 +45,37 @@ const AllBoards = ({ boards, submitNewBoard, setFromStorage, isFetched }) => {
 	};
 
 	return (
-		<div>
+		<div className="all-boards">
 			{createMode ? (
-				<BoardLink>
-					<h4>Creating a board</h4>
+				<BoardLink classProps="board-link_highlighted all-boards__board-link">
+					<h4 className="board-link__title board-link__title_highlighted board-link__title_crown">
+						Creating a board
+					</h4>
 					<Form
-						classProps=""
+						classProps="board-link__form"
 						submitAction={(title) => submitNewBoard(title)}
 						resetAction={goToBoards}
 						errorMsg="You have to name your new board"
 						placeholder="Add a new board"
 					>
-						<Button type="reset" classProps="" name="Cancel" />
-						<Button type="submit" classProps="" name="Submit" />
+						<Button
+							type="reset"
+							classProps="button_rect button_light form__button"
+							name="Cancel"
+						/>
+						<Button
+							type="submit"
+							classProps="button_rect button_simple form__button"
+							name="Submit"
+						/>
 					</Form>
 				</BoardLink>
 			) : (
-				<a href="#" onClick={goToForm}>
-					<BoardLink>
-						<h4>Create new board...</h4>
+				<a href="#" className="all-boards__link" onClick={goToForm}>
+					<BoardLink classProps="board-link_highlighted board-link_clickable">
+						<h4 className="board-link__title board-link__title_highlighted">
+							Create new board...
+						</h4>
 					</BoardLink>
 				</a>
 			)}

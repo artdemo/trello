@@ -1,0 +1,11 @@
+.all-boards {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+}
+
+.all-boards__board-link,
+.all-boards__link {
+	flex: 0 0 auto;
+	margin: 0 20px 20px 0;
+}
