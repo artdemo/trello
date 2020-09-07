@@ -22,7 +22,7 @@ const AllCards = ({ boardId, listId, cards, classProps }) => {
 			);
 		});
 
-		return <ul className={`${classProps}`}>{insertCards}</ul>;
+		return <ul className={`all-cards ${classProps}`}>{insertCards}</ul>;
 	};
 
 	return <>{renderCards()}</>;

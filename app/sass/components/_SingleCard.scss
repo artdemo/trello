@@ -1,0 +1,65 @@
+.single-card {
+	&:not(:last-child) {
+		margin-bottom: 10px;
+	}
+
+	@at-root &__item {
+		padding: 10px;
+		border-radius: 2px;
+		box-shadow: 1px 1px 4px $queen;
+		display: flex;
+		align-items: center;
+		cursor: grab;
+
+		@at-root &_active {
+			background-color: $grass;
+		}
+
+		@at-root &_done {
+			background-color: rgba($grass, 0.5);
+			box-shadow: inset 1px 1px 4px $queen;
+			opacity: 0.4;
+		}
+	}
+
+	@at-root &__title {
+	}
+
+	@at-root &__btn {
+		margin-left: auto;
+		flex-shrink: 0;
+		width: 20px;
+		height: 20px;
+		position: relative;
+		border: none;
+		outline: none;
+		background-color: transparent;
+		cursor: pointer;
+
+		&:before {
+			content: "\2a2f";
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 20px;
+			line-height: 1;
+		}
+
+		&:focus {
+			outline: 1px solid $ocean;
+		}
+
+		@at-root &_active {
+			&:before {
+				content: "\2717";
+			}
+		}
+
+		@at-root &_done {
+			&:before {
+				content: "\2713";
+			}
+		}
+	}
+}

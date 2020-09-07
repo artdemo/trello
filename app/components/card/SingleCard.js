@@ -20,9 +20,20 @@ const SingleCard = ({
 	};
 
 	return (
-		<li draggable={true} onDragStart={handleDragStart}>
-			<span>{title}</span>
-			<button onClick={handleClick}>{`${isArchived}`}</button>
+		<li draggable={true} onDragStart={handleDragStart} className="single-card">
+			<div
+				className={`single-card__item ${
+					isArchived ? "single-card__item_done" : "single-card__item_active"
+				}`}
+			>
+				<span className="single-card__title">{title}</span>
+				<button
+					className={`single-card__btn ${
+						isArchived ? "single-card__btn_done" : "single-card__btn_active"
+					}`}
+					onClick={handleClick}
+				></button>
+			</div>
 		</li>
 	);
 };
