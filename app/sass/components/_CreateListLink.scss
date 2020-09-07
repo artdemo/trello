@@ -1,0 +1,16 @@
+.create-list-link {
+	border: none;
+	width: 120px;
+	height: 90px;
+	padding: 10px;
+	cursor: pointer;
+	background-color: $ocean;
+	color: $alpine;
+	box-shadow: 1px 1px 4px $queen;
+	border-radius: 2px;
+	transition: transform 0.2s 0.03s;
+
+	&:hover {
+		transform: scale(1.1, 1.1);
+	}
+}

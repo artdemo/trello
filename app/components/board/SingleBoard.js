@@ -37,10 +37,12 @@ const SingleBoard = ({
 	};
 
 	return (
-		<div>
-			<div>
-				<Link to="/">Home</Link>
-				<h3>{board.title}</h3>
+		<div className="single-board">
+			<div className="single-board__row">
+				<Link to="/" className="single-board__link">
+					Home
+				</Link>
+				<h3 className="single-board__title">{board.title}</h3>
 			</div>
 			<AllLists boardId={board.id} />
 			{createMode ? (

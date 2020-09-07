@@ -15,6 +15,7 @@ const allLists = ({ boardId, lists }) => {
 					boardId={boardId}
 					listId={list.id}
 					title={list.title}
+					classProps="single-board__single-list"
 				/>
 			);
 		});
