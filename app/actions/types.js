@@ -4,3 +4,4 @@ export const SUBMIT_NEW_CARD = "SUBMIT_NEW_CARD";
 export const REPLACE_CARD = "REPLACE_CARD";
 export const SET_ARCHIVE = "SET_ARCHIVE";
 export const SET_FROM_STORAGE = "SET_FROM_STORAGE";
+export const SET_IS_FETCHED = "SET_IS_FETCHED";

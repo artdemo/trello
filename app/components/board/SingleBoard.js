@@ -9,15 +9,23 @@ import { connect } from "react-redux";
 import { getStateFromStorage } from "Root/server";
 import { submitNewList, setFromStorage } from "Actions/actions";
 
-const SingleBoard = (props) => {
+const SingleBoard = ({
+	board,
+	match,
+	submitNewList,
+	setFromStorage,
+	isFetched,
+}) => {
 	useEffect(() => {
+		if (isFetched) return;
+
 		const state = getStateFromStorage();
-		props.setFromStorage(state);
+		setFromStorage(state);
 	}, []);
 
-	const { board, match, submitNewList } = props;
-
 	const [createMode, setCreateMode] = useState(false);
+
+	if (!isFetched) return "Loading...";
 
 	if (!board) return <ErrorPage />;
 
@@ -55,6 +63,7 @@ const SingleBoard = (props) => {
 function mapStateToProps(state, props) {
 	return {
 		board: state.boards[props.match.params.id],
+		isFetched: state.isFetched,
 	};
 }
 

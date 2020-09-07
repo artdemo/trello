@@ -5,9 +5,16 @@ import {
 	REPLACE_CARD,
 	SET_ARCHIVE,
 	SET_FROM_STORAGE,
+	SET_IS_FETCHED,
 } from "Actions/types";
 import { combineReducers } from "redux";
 import { reducer as formReducer } from "redux-form";
+
+const setFetchReducer = (state = false, action) => {
+	if (action.type === SET_IS_FETCHED) return true;
+
+	return state;
+};
 
 const handleBoardReducer = (state = [], action) => {
 	switch (action.type) {
@@ -69,4 +76,5 @@ export const rootReducer = combineReducers({
 	boards: handleBoardReducer,
 	lists: handleListReducer,
 	cards: handleCardReducer,
+	isFetched: setFetchReducer,
 });

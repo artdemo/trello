@@ -5,8 +5,15 @@ import {
 	REPLACE_CARD,
 	SET_ARCHIVE,
 	SET_FROM_STORAGE,
+	SET_IS_FETCHED,
 } from "./types";
 import { getNextId } from "Utils/helpers";
+
+export const setIsFetched = () => {
+	return {
+		type: SET_IS_FETCHED,
+	};
+};
 
 export const submitNewBoard = (title) => {
 	return (dispatch, getState) => {

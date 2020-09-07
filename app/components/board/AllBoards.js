@@ -8,13 +8,17 @@ import { connect } from "react-redux";
 import { getStateFromStorage } from "Root/server";
 import { setFromStorage } from "Actions/actions";
 
-const AllBoards = ({ boards, submitNewBoard, setFromStorage }) => {
+const AllBoards = ({ boards, submitNewBoard, setFromStorage, isFetched }) => {
 	useEffect(() => {
+		if (isFetched) return;
+
 		const state = getStateFromStorage();
 		setFromStorage(state);
 	}, []);
 
 	const [createMode, setCreateMode] = useState(false);
+
+	if (!isFetched) return "Loading...";
 
 	const goToBoards = () => {
 		setCreateMode(false);
@@ -71,6 +75,7 @@ const AllBoards = ({ boards, submitNewBoard, setFromStorage }) => {
 function mapStateToProps(state) {
 	return {
 		boards: state.boards,
+		isFetched: state.isFetched,
 	};
 }
 

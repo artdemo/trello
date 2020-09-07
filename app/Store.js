@@ -3,32 +3,24 @@ import { rootReducer } from "Reducers/reducers";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import { saveStateIntoStorage } from "./server";
+import { setIsFetched } from "Actions/actions";
 
 const middleware = applyMiddleware(thunk);
 
-//Preloaded state
-// const preloadedState = {
-// 	boards: [{ id: 0, title: "First board" }],
-// 	lists: [
-// 		{ id: 0, title: "First list", boardId: 0 },
-// 		{ id: 1, title: "Second list", boardId: 0 },
-// 	],
-// 	cards: [
-// 		{ id: 0, title: "First card", boardId: 0, listId: 0, isArchived: false },
-// 		{ id: 1, title: "Second card", boardId: 0, listId: 0, isArchived: false },
-// 		{ id: 2, title: "Third card", boardId: 0, listId: 1, isArchived: false },
-// 		{ id: 3, title: "Fourth card", boardId: 0, listId: 1, isArchived: false },
-// 	],
-// };
-//
-
 const store = createStore(
 	rootReducer,
-	// preloadedState,
 	composeWithDevTools(applyMiddleware(thunk))
 );
 
+//Listen changes and send new state to the storage
 store.subscribe(() => {
+	const { isFetched } = store.getState();
+	//If it's the first request, set a flag and return, so as not to send the same state back to the storage
+	if (!isFetched) {
+		store.dispatch(setIsFetched());
+		return;
+	}
+	//Take a new state and save it in the storage
 	const { boards, lists, cards } = store.getState();
 	saveStateIntoStorage({ boards, lists, cards });
 });
