@@ -41,7 +41,7 @@ const SingleBoard = ({
 		<div className="single-board">
 			<div className="single-board__row">
 				<Link to="/" className="single-board__link">
-					Home
+					<Icon classProps="icon_left-circled icon_m" />
 				</Link>
 				<h3 className="single-board__title">{board.title}</h3>
 			</div>
