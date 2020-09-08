@@ -6,12 +6,11 @@
 
 	@at-root &_highlighted {
 		background-color: $apple;
-		color: $alpine;
 	}
 
 	@at-root &_simple {
 		background-color: $alpine;
-		color: $black-queen;
+		// color: $black-queen;
 	}
 
 	@at-root &_clickable {
@@ -26,6 +25,7 @@
 		text-overflow: ellipsis;
 
 		@at-root &_highlighted {
+			color: $alpine;
 			text-shadow: 1px 1px 3px $queen;
 		}
 

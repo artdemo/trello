@@ -9,13 +9,8 @@
 .icon {
   &::before {
     font-family: "fontello";
-    font-style: normal;
-    font-weight: normal;
     display: inline-block;
-    text-decoration: inherit;
-    text-align: center;
-    font-variant: normal;
-    text-transform: none;
+    letter-spacing: normal;
   }
 
   @at-root &_left-circled:before {

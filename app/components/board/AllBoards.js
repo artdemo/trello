@@ -37,7 +37,7 @@ const AllBoards = ({ boards, submitNewBoard, setFromStorage, isFetched }) => {
 			return (
 				<Link key={board.id} to={`/${board.id}`} className="all-boards__link">
 					<BoardLink classProps="board-link_simple board-link_clickable">
-						<h4 className="board-link__title">{board.title}</h4>
+						<h2 className="board-link__title">{board.title}</h2>
 					</BoardLink>
 				</Link>
 			);
@@ -48,9 +48,9 @@ const AllBoards = ({ boards, submitNewBoard, setFromStorage, isFetched }) => {
 		<div className="all-boards">
 			{createMode ? (
 				<BoardLink classProps="board-link_highlighted all-boards__board-link">
-					<h4 className="board-link__title board-link__title_highlighted board-link__title_crown">
+					<h2 className="board-link__title board-link__title_highlighted board-link__title_crown">
 						Creating a board
-					</h4>
+					</h2>
 					<Form
 						classProps="board-link__form"
 						submitAction={(title) => submitNewBoard(title)}
@@ -73,9 +73,9 @@ const AllBoards = ({ boards, submitNewBoard, setFromStorage, isFetched }) => {
 			) : (
 				<a href="#" className="all-boards__link" onClick={goToForm}>
 					<BoardLink classProps="board-link_highlighted board-link_clickable">
-						<h4 className="board-link__title board-link__title_highlighted">
+						<h2 className="board-link__title board-link__title_highlighted">
 							Create new board...
-						</h4>
+						</h2>
 					</BoardLink>
 				</a>
 			)}

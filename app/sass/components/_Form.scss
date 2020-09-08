@@ -21,11 +21,11 @@
 	@at-root &__error {
 		position: relative;
 		background-color: $alpine;
-		color: $black-queen;
 		margin: 10px 0 0 10px;
 		padding: 10px;
 		box-shadow: 0 0 3px 1px $alarm;
 		border-radius: 2px;
+		font-size: 1.4rem;
 
 		&:before {
 			content: "";
