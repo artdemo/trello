@@ -3,9 +3,6 @@
 	padding: 30px;
 	border-radius: 5px;
 	box-shadow: 1px 1px 4px $queen;
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
 
 	@at-root &_highlighted {
 		background-color: $apple;
@@ -24,6 +21,9 @@
 	@at-root &__title {
 		text-align: center;
 		margin: 0;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 
 		@at-root &_highlighted {
 			text-shadow: 1px 1px 3px $queen;
