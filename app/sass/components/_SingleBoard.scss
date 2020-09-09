@@ -11,12 +11,12 @@
 	}
 
 	@at-root &__title {
+		box-shadow: $box-shadow1;
+		text-shadow: $text-shadow1;
 		padding: 10px 50px;
 		margin: 10px 50px;
 		background-color: $apple;
 		border-radius: 5px;
-		box-shadow: 1px 1px 4px $queen;
-		text-shadow: 1px 1px 3px $queen;
 		color: $alpine;
 		display: inline-block;
 	}

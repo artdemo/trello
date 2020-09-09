@@ -9,7 +9,7 @@
 	&:focus,
 	&:hover {
 		outline: none;
-		box-shadow: 0 0 0 2px $flower;
+		box-shadow: $box-shadow3;
 	}
 
 	@at-root &_rect {
@@ -24,14 +24,14 @@
 	}
 
 	@at-root &_simple {
+		box-shadow: $box-shadow1;
 		background-color: $alpine;
-		box-shadow: 1px 1px 4px $queen;
 	}
 
 	@at-root &_light {
 		background-color: $apple;
 		color: $alpine;
-		text-shadow: 1px 1px 3px $queen;
+		text-shadow: $text-shadow1;
 	}
 
 	@at-root &_round {

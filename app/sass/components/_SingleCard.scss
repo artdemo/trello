@@ -4,9 +4,9 @@
 	}
 
 	@at-root &__item {
+		box-shadow: $box-shadow1;
 		padding: 10px;
 		border-radius: 2px;
-		box-shadow: 1px 1px 4px $queen;
 		display: flex;
 		align-items: center;
 		cursor: grab;
@@ -16,8 +16,8 @@
 		}
 
 		@at-root &_done {
+			box-shadow: $box-shadow2;
 			background-color: rgba($grass, 0.5);
-			box-shadow: inset 1px 1px 4px $queen;
 			opacity: 0.4;
 		}
 	}

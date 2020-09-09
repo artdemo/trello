@@ -5,15 +5,18 @@
 	position: relative;
 
 	@at-root &__control {
+		box-shadow: $box-shadow1;
 		border: none;
 		width: 100%;
 		background-color: $alpine;
-		box-shadow: 1px 1px 4px $queen;
 		border-radius: 2px;
 		padding: 10px;
 
 		&:focus {
-			box-shadow: 1px 1px 4px $queen, 0 0 0 2px $flower;
+			// box-shadow: 1px 1px 14px $queen, 0 0 0 2px $flower;
+			// @include box-shadow(0, 0, 0, 12px, $queen);
+			// @include box-shadow(0, 0, 0, 2px, $flower);
+			box-shadow: $box-shadow1, $box-shadow3;
 			outline: none;
 		}
 	}
