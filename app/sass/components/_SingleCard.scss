@@ -3,8 +3,10 @@
 		margin-bottom: 10px;
 	}
 
+	animation: fade_on 0.3s forwards;
+
 	@at-root &__item {
-		box-shadow: $box-shadow1;
+		box-shadow: $box-shadow_1;
 		padding: 10px;
 		border-radius: 2px;
 		display: flex;
@@ -16,7 +18,7 @@
 		}
 
 		@at-root &_done {
-			box-shadow: $box-shadow2;
+			box-shadow: $box-shadow_2;
 			background-color: rgba($grass, 0.5);
 			opacity: 0.4;
 		}

@@ -52,6 +52,7 @@ const SingleBoard = ({
 					resetAction={goToLists}
 					errorMsg="You have to name your new list"
 					placeholder={"Name your list"}
+					classProps="form_animated"
 				>
 					<Button type="reset" classProps="button_round form__button_round">
 						<Icon classProps="icon_cancel icon_s" />
