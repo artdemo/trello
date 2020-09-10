@@ -8,7 +8,6 @@ import {
 	SET_IS_FETCHED,
 } from "Actions/types";
 import { combineReducers } from "redux";
-import { reducer as formReducer } from "redux-form";
 
 const setFetchReducer = (state = false, action) => {
 	if (action.type === SET_IS_FETCHED) return true;
