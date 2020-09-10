@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 
 const ErrorPage = () => {
 	return (
-		<div>
-			<h2>There is no such a page</h2>
-			<Link to="/">Home</Link>
+		<div className="error-page">
+			<h2 className="error-page__title">There is no such a page</h2>
+			<Link to="/" className="error-page__link">
+				Home
+			</Link>
 		</div>
 	);
 };
