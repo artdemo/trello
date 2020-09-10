@@ -12,7 +12,7 @@ const SingleCard = ({
 	const handleDragStart = (e) => {
 		const data = JSON.stringify({ cardId, sourceListId });
 
-		e.dataTransfer.setData("text/plain", data);
+		e.dataTransfer.setData("text", data);
 	};
 
 	const handleClick = () => {

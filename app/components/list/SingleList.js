@@ -17,7 +17,7 @@ const SingleList = (props) => {
 	const handleDrop = (e, id) => {
 		e.preventDefault();
 
-		const data = e.dataTransfer.getData("text/plain");
+		const data = e.dataTransfer.getData("text");
 
 		const { sourceListId, cardId } = JSON.parse(data);
 		//If it's the same list that card is taken from, do nothing

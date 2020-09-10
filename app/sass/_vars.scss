@@ -12,6 +12,8 @@ $box-shadow_1: 1px 1px 4px 0px $queen;
 $box-shadow_2: inset 1px 1px 4px 0px $queen;
 $box-shadow_3: 0 0 0 2px $flower;
 $text-shadow_1: 1px 1px 3px $queen;
+//================BREAKPOINTS===================//
+$phone: 500px;
 //==================KEYFRAMES==================//
 @keyframes fade_on {
 	from {
