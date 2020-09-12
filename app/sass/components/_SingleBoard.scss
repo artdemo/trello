@@ -18,12 +18,16 @@
 	@at-root &__title {
 		box-shadow: $box-shadow_1;
 		text-shadow: $text-shadow_1;
-		padding: 10px 50px;
+		padding: 20px 50px;
 		margin: 10px 50px;
 		background-color: $apple;
 		border-radius: 5px;
 		color: $alpine;
 		display: inline-block;
+
+		@media (max-width: $hd) {
+			padding: 10px 50px;
+		}
 	}
 
 	@at-root &__link {

@@ -26,18 +26,25 @@
 
 	@at-root &__title {
 		margin: 0;
+		overflow-wrap: break-word;
+		max-width: 90%;
 	}
 
 	@at-root &__btn {
 		margin-left: auto;
 		flex-shrink: 0;
-		width: 20px;
-		height: 20px;
+		height: 30px;
+		width: 10%;
 		position: relative;
 		border: none;
+		// border: 1px solid orange;
 		outline: none;
 		background-color: transparent;
 		cursor: pointer;
+
+		@media (max-width: $hd) {
+			height: 20px;
+		}
 
 		&:before {
 			content: "\2a2f";
@@ -45,8 +52,12 @@
 			left: 50%;
 			top: 50%;
 			transform: translate(-50%, -50%);
-			font-size: 20px;
+			font-size: 30px;
 			line-height: 1;
+
+			@media (max-width: $hd) {
+				font-size: 20px;
+			}
 		}
 
 		&:focus {

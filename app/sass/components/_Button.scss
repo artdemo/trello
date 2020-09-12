@@ -13,14 +13,20 @@
 	}
 
 	@at-root &_rect {
-		padding: 7px 12px;
-		max-width: 100px;
-		min-width: 70px;
+		padding: 10px 16px;
+		max-width: 130px;
+		min-width: 100px;
 		border: none;
 		border-radius: 2px;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
+
+		@media (max-width: $hd) {
+			max-width: 100px;
+			min-width: 70px;
+			padding: 7px 12px;
+		}
 	}
 
 	@at-root &_simple {
@@ -36,11 +42,16 @@
 
 	@at-root &_round {
 		border-radius: 50%;
-		width: 25px;
-		height: 25px;
+		width: 35px;
+		height: 35px;
 		background-color: $alpine;
 		color: $apple;
 		border: 2px solid $apple;
 		display: inline-block;
+
+		@media (max-width: $hd) {
+			width: 25px;
+			height: 25px;
+		}
 	}
 }

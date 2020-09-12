@@ -1,8 +1,12 @@
 .single-list {
 	box-shadow: $box-shadow_1;
-	width: 200px;
+	width: 300px;
 	padding: 20px 10px;
 	border-radius: 2px;
+
+	@media (max-width: $hd) {
+		width: 200px;
+	}
 
 	@at-root &__title {
 		margin: 0;
