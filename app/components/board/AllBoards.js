@@ -5,20 +5,18 @@ import Button from "../Button";
 import { Link } from "react-router-dom";
 import { submitNewBoard } from "Actions/actions";
 import { connect } from "react-redux";
-import { getStateFromStorage } from "Root/server";
 import { setFromStorage } from "Actions/actions";
 
 const AllBoards = ({ boards, submitNewBoard, setFromStorage, isFetched }) => {
 	useEffect(() => {
 		if (isFetched) return;
 
-		const state = getStateFromStorage();
-		setFromStorage(state);
+		setFromStorage();
 	}, []);
 
 	const [createMode, setCreateMode] = useState(false);
 
-	if (!isFetched) return "Loading...";
+	if (!isFetched) return <p>"Loading..."</p>;
 
 	const goToBoards = () => {
 		setCreateMode(false);

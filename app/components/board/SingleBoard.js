@@ -7,7 +7,6 @@ import AllLists from "../list/AllLists";
 import ErrorPage from "../ErrorPage";
 import Icon from "../Icon";
 import { connect } from "react-redux";
-import { getStateFromStorage } from "Root/server";
 import { submitNewList, setFromStorage } from "Actions/actions";
 
 const SingleBoard = ({
@@ -20,13 +19,12 @@ const SingleBoard = ({
 	useEffect(() => {
 		if (isFetched) return;
 
-		const state = getStateFromStorage();
-		setFromStorage(state);
+		setFromStorage();
 	}, []);
 
 	const [createMode, setCreateMode] = useState(false);
 
-	if (!isFetched) return "Loading...";
+	if (!isFetched) return <p>"Loading..."</p>;
 
 	if (!board) return <ErrorPage />;
 

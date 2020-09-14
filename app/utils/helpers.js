@@ -42,3 +42,7 @@ export function copyStates(from, where) {
 		where[key] = from[key];
 	}
 }
+
+export function getRandomLag(min, max) {
+	return Math.round(Math.random() * (max - min) + min);
+}

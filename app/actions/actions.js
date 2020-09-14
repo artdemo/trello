@@ -8,6 +8,8 @@ import {
 	SET_IS_FETCHED,
 } from "./types";
 import { getNextId } from "Utils/helpers";
+import { initialState, itemName } from "Utils/constants";
+import { getStateFromStorage } from "Root/server";
 
 export const setIsFetched = () => {
 	return {
@@ -94,9 +96,20 @@ export const setArchive = (cardId) => {
 	};
 };
 
-export const setFromStorage = (state) => {
-	return {
-		type: SET_FROM_STORAGE,
-		payload: state,
+export const setFromStorage = () => {
+	return (dispatch) => {
+		getStateFromStorage(itemName, initialState)
+			.then((state) => {
+				dispatch({
+					type: SET_FROM_STORAGE,
+					payload: state,
+				});
+			})
+			.catch((e) => {
+				console.log(e);
+				alert(
+					"Something went wrong during server request, please reload the page"
+				);
+			});
 	};
 };
